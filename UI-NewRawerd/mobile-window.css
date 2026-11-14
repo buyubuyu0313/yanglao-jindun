@@ -1,0 +1,18 @@
+/* iframe 内只显示手机界面，尺寸由外部小窗控制。 */
+html,body { width:100%; height:100%; min-width:0; background:transparent; overflow:hidden; }
+body { margin:0; }
+main#mobile-root { padding:0; width:100%; height:100%; max-width:none; }
+#mobile-root>.mobile-app { height:100%; }
+#mobile-root .phone-device { width:100%; max-width:none; height:100%; min-height:0; border-width:4px; border-radius:31px; grid-template-rows:34px minmax(0,1fr) 73px 14px; box-shadow:none; }
+#mobile-root .mobile-screen { padding:0 17px 18px; }
+#mobile-root .m-heading { min-height:57px; }
+#mobile-root .m-heading h1 { font-size:20px; }
+#mobile-root .m-categories { margin-inline:-17px; padding-inline:17px; }
+#mobile-root .m-hero h2 { font-size:23px; }
+#mobile-root .m-heading .m-demo { display:none; }
+#mobile-root .m-risk-summary h2 { font-size:18px; }
+#mobile-root .m-reading-title { font-size:22px; }
+#mobile-root .mobile-bottom-nav { margin-inline:9px; }
+@media(min-width:440px) { #mobile-root .mobile-screen { padding-inline:24px; } #mobile-root .m-hero h2 { font-size:27px; } }
+@media(max-width:300px) { #mobile-root .mobile-screen { padding-inline:12px; } #mobile-root .m-heading h1 { font-size:18px; } #mobile-root .m-hero h2 { font-size:21px; } }
+@media(min-width:300px) { #mobile-root .m-shortcuts { grid-template-columns:repeat(4,minmax(0,1fr)); } }

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN" data-sidebar="collapsed" data-app-mode="admin">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#437266">
+  <title>养老金盾 · 管理工作台</title>
+  <script src="theme.js?v=20261011-present-5"></script>
+  <link rel="stylesheet" href="styles.css?v=20261011-present-5">
+  <link rel="stylesheet" href="admin.css?v=20261011-present-5">
+  <link rel="stylesheet" href="floating-phones.css?v=20261011-present-5">
+  <script src="icons.js?v=20261011-present-5" defer></script>
+  <script src="mock-data.js?v=20261011-present-5" defer></script>
+  <script src="sidebar.js?v=20261011-present-5" defer></script>
+  <script src="views-workbench.js?v=20261011-present-5" defer></script>
+  <script src="views-flow.js?v=20261011-present-5" defer></script>
+  <script src="app.js?v=20261011-present-5" defer></script>
+  <script src="floating-phones.js?v=20261011-present-5" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <button class="brand" id="sidebar-toggle" type="button" aria-controls="sidebar-navigation" aria-expanded="false" aria-label="展开侧栏" title="展开侧栏">
+        <span class="brand-mark" data-icon="brand"></span>
+        <span class="brand-copy"><strong>养老金盾</strong><small>PENSION SHIELD</small></span>
+        <span class="sidebar-fold" data-icon="panel"></span>
+      </button>
+      <div class="workspace-label">管理工作台</div>
+      <nav class="nav-list" id="sidebar-navigation"></nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-separator"></div>
+        <a class="nav-link" href="#/settings" data-page="settings"><span data-icon="settings"></span><span class="nav-text">界面设置</span></a>
+        <button class="profile" id="account-button" type="button" aria-expanded="false" aria-controls="account-popover" aria-label="打开账户选项" title="账户选项">
+          <span class="avatar account-avatar">陈</span><span class="profile-copy"><strong>未选择身份</strong><small>演示角色</small></span><span class="account-more" data-icon="more"></span>
+        </button>
+      </div>
+    </aside>
+    <button class="sidebar-backdrop" id="sidebar-backdrop" aria-label="关闭导航" hidden></button>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button menu-button" id="menu-button" aria-label="打开导航" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path id="menu-top" d="M4 6 L12 6 L20 6"/><path id="menu-middle" d="M4 12 L20 12"/><path id="menu-bottom" d="M4 18 L12 18 L20 18"/></svg></button>
+          <span class="breadcrumb">养老金盾 <span>/</span> <strong id="breadcrumb-page">角色入口</strong></span>
+          <button class="admin-who" id="role-who" type="button" title="切换身份" aria-haspopup="dialog"><span data-icon="user-round"></span><span id="role-who-text">未选择身份</span></button>
+        </div>
+        <div class="topbar-right">
+          <span class="app-demo-badge">演示版</span>
+          <div class="phone-launchers">
+            <button class="phone-launch" data-phone-open="elder" aria-controls="phone-window-elder" aria-expanded="false"><span data-icon="shield"></span>长辈端</button>
+            <button class="phone-launch" data-phone-open="family" aria-controls="phone-window-family" aria-expanded="false"><span data-icon="users"></span>家属端</button>
+            <button class="phone-launch demo-launch" id="demo-launch" title="开始演示：家庭守护、支付风控与审计" aria-controls="demo-dock" aria-expanded="false"><span data-icon="spark"></span>演示</button>
+            <button class="phone-launch console" id="demo-console" title="查看演示流程" aria-controls="main"><span data-icon="spark"></span><span class="pl-full">演示流程</span><span class="pl-short">流程</span></button>
+          </div>
+          <button class="icon-button theme-toggle" id="theme-toggle" aria-label="当前浅色，切换深色主题" aria-pressed="false" title="切换深色主题"><svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="theme-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></g><path class="theme-moon" d="M20.5 13.2A8.6 8.6 0 0 1 10.8 3.5 8.7 8.7 0 1 0 20.5 13.2Z"/></svg></button>
+          <button class="icon-button notification-button" id="notifications" aria-label="查看待处置风险"><span data-icon="bell"></span><span class="notification-dot" id="notification-dot"></span></button>
+        </div>
+      </header>
+      <main id="main" tabindex="-1"></main>
+      <footer class="footer"><span>养老金盾 · 管理工作台</span><span>演示数据 · 未接入真实账户</span></footer>
+    </div>
+  </div>
+  <section class="account-popover" id="account-popover" aria-label="账户选项" hidden>
+    <div class="account-menu-heading"><span class="avatar account-avatar" id="account-menu-avatar">陈</span><div><strong id="account-menu-name">未选择身份</strong><small id="account-menu-role">演示角色</small></div></div>
+    <button class="account-menu-item" id="switch-role"><span data-icon="user-round"></span><span>切换身份<small>意定监护人 / 信托公司 / 监察人</small></span><span data-icon="chevron"></span></button>
+    <a class="account-menu-item" id="account-settings" href="#/settings"><span data-icon="settings"></span><span>界面设置<small>字号、对比与动效</small></span><span data-icon="chevron"></span></a>
+    <div class="account-menu-footnote">三方协同 · 演示身份</div>
+  </section>
+  <dialog id="account-dialog" aria-labelledby="account-dialog-title">
+    <div class="dialog-heading"><h2 id="account-dialog-title">资料设置</h2><button class="icon-button" id="account-dialog-close" aria-label="关闭资料设置"><span data-icon="close"></span></button></div>
+    <p class="dialog-copy">使用虚构称呼即可。资料仅保存在当前浏览器。</p>
+    <form id="account-form">
+      <label class="form-field">演示称呼<input name="displayName" required maxlength="16" autocomplete="off" placeholder="请输入演示称呼"></label>
+      <label class="form-field">个性签名<input name="bio" maxlength="40" autocomplete="off" placeholder="例如：和家人一起安心生活"></label>
+      <fieldset class="avatar-picker"><legend>头像颜色</legend><label><input type="radio" name="color" value="ink"><span class="avatar-swatch ink">深蓝</span></label><label><input type="radio" name="color" value="blue"><span class="avatar-swatch blue">蓝色</span></label><label><input type="radio" name="color" value="sage"><span class="avatar-swatch sage">松绿</span></label></fieldset>
+      <div class="dialog-actions"><button type="button" class="button subtle" id="account-cancel">取消</button><button type="submit" class="button primary">保存资料</button></div>
+      <p class="account-save-status" id="account-save-status" role="status"></p>
+    </form>
+  </dialog>
+  <dialog id="role-dialog" aria-labelledby="role-dialog-title">
+    <div class="dialog-heading"><h2 id="role-dialog-title">切换身份</h2><button class="icon-button" id="role-dialog-close" aria-label="关闭身份切换"><span data-icon="close"></span></button></div>
+    <p class="dialog-copy">意定监护人照护确认，信托公司资金复核，监察人独立监督。</p>
+    <div class="role-cards" id="role-cards"></div>
+    <div class="dialog-actions"><button type="button" class="button subtle" id="role-dialog-home">返回角色入口</button></div>
+  </dialog>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title"></h2><button class="icon-button" id="dialog-close" aria-label="关闭弹窗"><span data-icon="close"></span></button></div><div id="dialog-body"></div></dialog>
+  <div id="phone-windows"></div>
+  <section id="demo-dock" class="demo-dock" aria-label="九步演示" hidden></section>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
